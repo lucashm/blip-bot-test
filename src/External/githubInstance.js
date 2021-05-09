@@ -5,6 +5,7 @@ const instance = axios.create({
   headers: {
     Accept: 'application/vnd.github.v3+json', // enforce v3 api version
   },
+  ...(process.env.GITHUB_TOKEN && { auth: `token ${process.env.GITHUB_TOKEN}` }), // add auth if token is available
 });
 
 export default instance;

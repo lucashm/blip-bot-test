@@ -1,5 +1,4 @@
 const errorHandler = (err, req, res, next) => {
-  console.log(err);
   if (!err.response) { // not sure from where it came from
     res.sendStatus(500);
     return;

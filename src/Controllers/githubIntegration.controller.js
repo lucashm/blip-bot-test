@@ -9,7 +9,7 @@ router.get('/oldest-csharp-repos', async (req, res, next) => {
   try {
     const { orgName, position } = req.query;
     if (!position) throw errorBuilder('You should send a position as a query parameter', 400);
-    if (!orgName) throw Error(errorBuilder('You should send an github organization name as a query parameter', 400));
+    if (!orgName) throw errorBuilder('You should send an github organization name as a query parameter', 400);
     const data = await getOldestCsharpRepos(orgName, position);
     res.send(data);
   } catch (err) {
